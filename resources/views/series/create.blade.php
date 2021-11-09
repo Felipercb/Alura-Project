@@ -4,15 +4,7 @@ Adicionar Série
 @endsection
 
 @section('conteudo')
-@if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+@include('errors', ['errors' => $errors])
 
 <form method="post">
     @csrf
@@ -33,6 +25,6 @@ Adicionar Série
         </div>
     </div>
 
-        <button class="btn btn-light mt-2 mb-2">Adicionar</button>
+        <button class="btn btn-dark btn-outline-danger mb-2 btn-sm mt-2">Adicionar</button>
 </form>
 @endsection
