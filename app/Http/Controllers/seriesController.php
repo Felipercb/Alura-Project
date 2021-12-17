@@ -21,7 +21,6 @@ class seriesController extends Controller {
         $mensagem = $request->session()->get('mensagem');
     
         return view('series.index', compact('series', 'mensagem'));
-        
 
     }
 

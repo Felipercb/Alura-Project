@@ -10,29 +10,27 @@
         @csrf
         <ul class="list-group">
             @foreach ($episodios as $episodio)
-            <li class="list-group-item d-flex justify-content-between align-items-center bg-secondary">
-                Episódio {{ $episodio->numero }}
-                @auth
-                <input type="checkbox"
-                       name="episodios[]" 
-                       value="{{ $episodio->id }}"  
-                       {{ $episodio->assistido ? 'checked' : ''}}>
-                @endauth
+                <li class="list-group-item d-flex justify-content-between align-items-center bg-secondary">
+                    Episódio {{ $episodio->numero }}
+                    @auth
+                        <input type="checkbox"
+                            name="episodios[]" 
+                            value="{{ $episodio->id }}"  
+                            {{ $episodio->assistido ? 'checked' : ''}}>
+                    @endauth
 
-            </li>
+                </li>
             @endforeach
             @guest
-            <div class="container">
-            <p class="text-danger mt-3">Para fazer alterações, faça o login clicando abaixo</p>
-            <a href="/entrar" class="btn btn-danger" role="button">Entrar</a>
-            </div>
+                <div class="container">
+                <p class="text-danger mt-3">Para fazer alterações, faça o login clicando abaixo</p>
+                <a href="/entrar" class="btn btn-danger" role="button">Entrar</a>
+                </div>
             @endguest
         </ul>
         @auth
-        <button class="btn btn-dark btn-outline-danger mb-2 btn-sm mt-2 ">Salvar</button>
+            <button class="btn btn-dark btn-outline-danger mb-2 btn-sm mt-2 ">Salvar</button>
         @endauth
-        
     </form>
-
 </div>
 @endsection

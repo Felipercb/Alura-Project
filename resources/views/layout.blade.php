@@ -15,15 +15,15 @@
                 <i class="fas fa-home"></i>
             </a>
             @auth
-            <a class="navbar-brand text-white" href="/sair">
-                <i class="fas fa-sign-out-alt"></i>
-            </a>
+                <a class="navbar-brand text-white" href="/sair">
+                    <i class="fas fa-sign-out-alt"></i>
+                </a>
             @endauth
 
             @guest
-            <a class="navbar-brand text-white" href="/entrar">
-                <i class="fas fa-sign-in-alt"></i>
-            </a>
+                <a class="navbar-brand text-white" href="/entrar">
+                    <i class="fas fa-sign-in-alt"></i>
+                </a>
             @endguest
         </div>
     </nav>
